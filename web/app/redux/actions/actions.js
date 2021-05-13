@@ -1,11 +1,11 @@
 import {fetchUser, fetchUsers} from '../../api'
-
-export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS"
-export const GET_USERS_FAIL = "GET_USERS_FAIL"
-export const GET_USER_BY_ID_SUCCESS = "GET_USER_BY_ID_SUCCESS"
-export const GET_USER_BY_ID_FAIL = "GET_USER_BY_ID_FAIL"
-export const START_FETCH = "START_FETCH"
-
+import {
+  START_FETCH,
+  GET_USERS_SUCCESS,
+  GET_USERS_FAIL,
+  GET_USER_BY_ID_SUCCESS,
+  GET_USER_BY_ID_FAIL
+} from '../constants'
 
 export const GetUsers = () => {
   return dispatch => {
@@ -14,11 +14,10 @@ export const GetUsers = () => {
     fetchUsers()
       .then(data => dispatch(getUsersSuccess(data)))
       .catch(err => dispatch(getUsersFail(err)))
-
   }
 }
 
-export const GetUser = id => {
+export const GetUserById = id => {
   return dispatch => {
     dispatch(startFetch())
 

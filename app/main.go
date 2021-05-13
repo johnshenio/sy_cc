@@ -122,6 +122,14 @@ var users = []User{
 		FavoriteColor: "plaid",
 		NumberOfPets:  0,
 	},
+	{
+		ID:            mustID(),
+		FirstName:     "Kevin",
+		LastName:      "Bacon",
+		Email:         "theBacon@Kevin.com",
+		FavoriteColor: "Sizzling Red",
+		NumberOfPets:  0,
+	},
 }
 
 func mustID() uuid.UUID {

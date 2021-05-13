@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useParams} from 'react-router-dom'
-import {GetUser} from '../../redux/actions/actions'
+import {GetUserById} from '../../redux/actions'
 
-const UsersById = () => {
+const UserById = () => {
   const dispatch = useDispatch();
   const {userById: {id, email, first_name, last_name, favorite_color, number_of_pets}, loading, error} = useSelector(state => state)
   const { userid } = useParams()
 
   useEffect(() => {
-    dispatch(GetUser(userid))
+    dispatch(GetUserById(userid))
   }, [])
 
 
@@ -36,4 +36,4 @@ const UsersById = () => {
   )
 }
 
-export default UsersById
+export default UserById
