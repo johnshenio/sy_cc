@@ -11,7 +11,7 @@ export const GetUsers = () => {
   return dispatch => {
     dispatch(startFetch());
 
-    fetchUsers()
+    return fetchUsers()
       .then(data => dispatch(getUsersSuccess(data)))
       .catch(err => dispatch(getUsersFail(err)))
   }
@@ -21,12 +21,11 @@ export const GetUserById = id => {
   return dispatch => {
     dispatch(startFetch())
 
-    fetchUser(id)
+    return fetchUser(id)
       .then(data => dispatch(getUsersByIdSuccess(data)))
       .catch(err => dispatch(getUsersByIdFail(err)))
   }
 }
-
 
 const startFetch = () => ({
   type: START_FETCH

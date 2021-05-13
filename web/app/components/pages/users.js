@@ -39,7 +39,7 @@ const Users = () => {
           {loading ? 
             <tr key="loading"><td>...loading</td></tr> : 
             error ? <tr key="error"><td>something went wrong</td></tr> :
-            tableOfUsers
+            tableOfUsers 
           }
         </tbody>
       </table>
